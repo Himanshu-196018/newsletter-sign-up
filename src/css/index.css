@@ -31,6 +31,9 @@ body {
   line-height: 1.4;
   color: var(--dark-slate-gray);
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main,
@@ -122,12 +125,33 @@ button {
   }
 }
 
+/* for success message component - mobile view */
+section {
+  min-height: 100vh;
+  max-width: 50rem;
+  padding: 2.5rem;
+}
+section img {
+  width: 6.5rem;
+  margin-top: 12rem;
+}
+h2 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-top: 4rem;
+}
+p {
+  margin-top: 2.5rem;
+  line-height: 1.5;
+}
+p span {
+  font-weight: 700;
+}
+section button {
+  margin-top: 60%;
+}
+
 @media only screen and (min-width: 840px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   main {
     display: flex;
     flex-direction: row-reverse;
@@ -142,10 +166,13 @@ button {
     max-width: 44rem;
     padding-inline: 2rem 4rem;
   }
-  h1 {
-    margin-top: -1rem;
+  h1,
+  h2 {
     font-size: 5.4rem;
     letter-spacing: 1.5px;
+  }
+  h1 {
+    margin-top: -1rem;
   }
 
   form {
@@ -154,5 +181,18 @@ button {
 
   button {
     margin: 2.4rem 0 0;
+  }
+
+  /* for success message component - desktop view */
+  section {
+    min-height: 52rem;
+    border-radius: 35px;
+    padding: 1.8rem 6rem;
+  }
+  section img {
+    margin-top: 3rem;
+  }
+  section button {
+    margin-top: 4rem;
   }
 }
