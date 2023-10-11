@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* Resets */
 *,
 ::before,
 ::after {
@@ -8,6 +9,7 @@
 }
 :root {
   --tomato: hsl(4, 100%, 67%);
+  --tomato-light: hsla(4, 100%, 67%, 0.1);
   --dark-slate-gray: hsl(234, 29%, 20%);
   --charcoal-gray: hsl(235, 18%, 26%);
   --gray: hsl(231, 7%, 60%);
@@ -36,6 +38,7 @@ body {
   justify-content: center;
 }
 
+/* style for main component */
 main,
 section {
   background-color: var(--white);
@@ -76,15 +79,6 @@ label {
   font-weight: 700;
 }
 
-.error-text {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 1.2rem;
-  display: none;
-  color: var(--tomato);
-}
-
 input,
 button {
   width: 100%;
@@ -121,11 +115,34 @@ button {
   border: none;
 
   &:hover {
-    background-image: linear-gradient(90deg, rgb(255, 62, 94), var(--tomato));
+    box-shadow: 0 8px 14px rgba(255, 65, 12, 0.4);
+    background-image: linear-gradient(
+      90deg,
+      rgb(255, 62, 120),
+      rgb(255, 71, 21)
+    );
   }
 }
 
-/* for success message component - mobile view */
+/* error text style */
+.error-text {
+  position: absolute;
+  right: 0;
+  top: -1.6rem;
+  font-size: 1.2rem;
+  color: var(--tomato);
+}
+
+/* error class to style input when email is not valid */
+.error {
+  color: var(--tomato);
+  background-color: var(--tomato-light);
+  border-color: var(--tomato);
+}
+
+/****************************************************
+* for success message component - mobile view
+*****************************************************/
 section {
   min-height: 100vh;
   max-width: 50rem;
@@ -151,6 +168,9 @@ section button {
   margin-top: 60%;
 }
 
+/******************************************************
+**     Desktop Design
+*******************************************************/
 @media only screen and (min-width: 840px) {
   main {
     display: flex;
@@ -175,7 +195,8 @@ section button {
     margin-top: -1rem;
   }
 
-  form {
+  form,
+  section img {
     margin-top: 3rem;
   }
 
@@ -189,9 +210,7 @@ section button {
     border-radius: 35px;
     padding: 1.8rem 6rem;
   }
-  section img {
-    margin-top: 3rem;
-  }
+
   section button {
     margin-top: 4rem;
   }
